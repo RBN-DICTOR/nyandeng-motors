@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nyandeng Motors SSD — Quality Imported Cars | Kenya & South Sudan</title>
+<meta name="description" content="Nyandeng Motors SSD: quality imported cars from Japan for buyers in Kenya and South Sudan. Quality cars, trusted deals. WhatsApp +254 182 895 922.">
+<meta name="theme-color" content="#07080a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080a;--panel:#111317;--gold:#f2b705;--gold2:#ffdc6b;--line:rgba(255,255,255,.1);
+  --grn:#078930;--red:#da121a;--blu:#0f47af;
+  --display:'Sora','Segoe UI',system-ui,sans-serif;
+  --body:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:#fff;font-family:var(--body);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,92vw);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.02;letter-spacing:-.03em}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;padding:.45rem .9rem;border:1px solid rgba(242,183,5,.35);border-radius:99px;background:rgba(242,183,5,.07)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 1.6rem;border-radius:99px;font:inherit;font-weight:700;border:1px solid transparent;cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s,color .25s}
+.btn.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#141000;box-shadow:0 12px 34px -10px rgba(242,183,5,.7)}
+.btn.primary:hover{transform:translateY(-3px);box-shadow:0 20px 40px -10px rgba(242,183,5,.8)}
+.btn.ghost{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2);backdrop-filter:blur(8px)}
+.btn.ghost:hover{background:#fff;color:#000;transform:translateY(-3px)}
+.btn.wa{background:#25d366;color:#04210f}
+.btn.wa:hover{transform:translateY(-3px)}
+
+/* NAV */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s}
+nav.stuck{background:rgba(7,8,10,.75);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:.8rem}
+.logo .badge{width:46px;height:46px;border-radius:50%;background:#000;border:2px solid var(--gold);display:grid;place-items:center;position:relative;box-shadow:0 0 18px rgba(242,183,5,.35)}
+.logo .badge svg{width:30px}
+.logo b{font-family:var(--display);font-size:1.05rem;letter-spacing:.06em;color:var(--gold);display:block;line-height:1}
+.logo small{font-size:.58rem;letter-spacing:.3em;color:#aaa;text-transform:uppercase}
+.links{display:flex;gap:2rem;align-items:center;font-weight:600;font-size:.92rem}
+.links a:not(.btn){opacity:.75;transition:.2s}.links a:not(.btn):hover{opacity:1;color:var(--gold)}
+.links .btn{padding:.65rem 1.2rem}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.8rem;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;padding:110px 0 60px;overflow:hidden;display:flex;align-items:center;
+  background:radial-gradient(50% 55% at 68% 52%,rgba(242,183,5,.16),transparent 70%),radial-gradient(35% 40% at 8% 100%,rgba(15,71,175,.2),transparent 70%),var(--bg)}
+.hero .bigtext{position:absolute;left:50%;top:50%;font-family:var(--display);font-weight:800;font-size:clamp(8rem,24vw,24rem);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.07);white-space:nowrap;transform:translate(calc(-50% + var(--bx,0px)),-50%);pointer-events:none;user-select:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:.9fr 1.1fr;gap:1rem;align-items:center}
+.hero h1{font-size:clamp(2.8rem,6vw,5.4rem);font-weight:800;margin:1.4rem 0 1.4rem}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--gold2),var(--gold) 60%,#c78a00);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.15rem;color:#c3c6cc;max-width:42ch;margin-bottom:2rem}
+.cta{display:flex;gap:1rem;flex-wrap:wrap}
+.flags{display:flex;gap:.7rem;margin-top:2.2rem;flex-wrap:wrap}
+.flags span{padding:.5rem .9rem;border-radius:99px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:.85rem;font-weight:600}
+
+.stage{perspective:1600px;height:min(560px,68vh);display:grid;place-items:center;position:relative;cursor:grab;touch-action:pan-y;user-select:none}
+.stage:active{cursor:grabbing}
+.car3d{position:relative;width:560px;height:224px;transform-style:preserve-3d;transform:rotateX(-9deg) rotateY(var(--ry,-30deg))}
+.layer{position:absolute;inset:0;pointer-events:none}
+.layer svg{width:560px;height:224px;display:block;overflow:visible}
+.disc{position:absolute;left:50%;top:196px;width:640px;height:640px;margin:-320px 0 0 -320px;border-radius:50%;transform:rotateX(90deg);
+  background:radial-gradient(circle,rgba(242,183,5,.18) 0 38%,rgba(10,10,12,.9) 62%,transparent 70%),repeating-conic-gradient(from 0deg,rgba(242,183,5,.5) 0 .6deg,transparent .6deg 6deg);
+  box-shadow:0 0 0 3px rgba(242,183,5,.55),inset 0 0 80px rgba(242,183,5,.25)}
+.disc::after{content:"";position:absolute;inset:90px;border-radius:50%;border:2px dashed rgba(255,255,255,.18)}
+.swatches{position:absolute;bottom:2%;left:50%;transform:translateX(-50%);display:flex;gap:12px;padding:10px 16px;border-radius:99px;background:rgba(17,19,23,.75);border:1px solid var(--line);backdrop-filter:blur(10px)}
+.swatches button{width:30px;height:30px;border-radius:50%;border:3px solid transparent;cursor:pointer;box-shadow:inset 0 0 0 2px rgba(0,0,0,.35);transition:transform .2s}
+.swatches button.on{border-color:#fff;transform:scale(1.18)}
+.hint{position:absolute;top:2%;right:0;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;opacity:.5}
+
+/* BRAND TAPE */
+.tape{border-block:1px solid var(--line);background:#0b0c0f;padding:1.3rem 0;overflow:hidden}
+.tape div{display:flex;gap:4rem;width:max-content;white-space:nowrap;animation:slide 32s linear infinite;font-family:var(--display);font-weight:700;font-size:1.5rem;color:#6b6f78}
+.tape span::after{content:"◆";margin-left:4rem;color:var(--gold);font-size:.8rem;vertical-align:middle}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{position:relative}
+.pad{padding:130px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:50px}
+.sec-head h2{font-size:clamp(2.3rem,5vw,4.2rem);margin-top:1rem;max-width:14ch}
+.sec-head p{color:#a9adb5;max-width:44ch}
+
+/* INVENTORY */
+.chips{display:flex;gap:10px;margin-bottom:30px;flex-wrap:wrap}
+.chip{padding:.6rem 1.2rem;border-radius:99px;background:#14161a;border:1px solid var(--line);color:#fff;font:inherit;font-weight:600;cursor:pointer;transition:.2s}
+.chip.on{background:var(--gold);color:#141000;border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;perspective:1400px}
+.car{position:relative;border-radius:26px;padding:22px;background:linear-gradient(160deg,#17191e,#0d0e11);border:1px solid var(--line);transform-style:preserve-3d;transition:transform .15s ease-out,opacity .4s;overflow:hidden}
+.car .glare{position:absolute;inset:0;background:radial-gradient(300px circle at var(--gx,50%) var(--gy,0%),rgba(242,183,5,.18),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.car:hover .glare{opacity:1}
+.car .pic{height:150px;display:grid;place-items:center;transform:translateZ(50px);margin:6px 0 10px}
+.car .pic svg{width:100%;max-width:330px;filter:drop-shadow(0 24px 18px rgba(0,0,0,.7))}
+.car .tag{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;transform:translateZ(24px)}
+.car h3{font-size:1.5rem;margin:.3rem 0 .4rem;transform:translateZ(30px)}
+.car p{color:#a9adb5;font-size:.94rem;margin-bottom:1.2rem;transform:translateZ(16px)}
+.car .row{display:flex;justify-content:space-between;align-items:center;transform:translateZ(26px)}
+.car .price{font-family:var(--display);font-weight:700;color:#fff}
+.car .price small{display:block;font-family:var(--body);font-weight:500;color:#8a8f98;font-size:.72rem}
+.car .btn{padding:.7rem 1.1rem;font-size:.86rem}
+.car.hide{display:none}
+.note{margin-top:22px;color:#7c8089;font-size:.85rem}
+
+/* STACK DECK */
+.deck-sec{height:440vh}
+.deck-sec .sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden;background:radial-gradient(50% 60% at 75% 50%,rgba(242,183,5,.1),transparent 70%)}
+.deck-sec .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:center}
+.deck-sec h2{font-size:clamp(2.3rem,5vw,4.2rem);margin:1rem 0 1.2rem}
+.deck-sec p.lead{color:#a9adb5;max-width:38ch}
+.prog{margin-top:2rem;height:4px;border-radius:2px;background:rgba(255,255,255,.12);width:min(320px,100%);overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold2),var(--gold))}
+.deck{position:relative;height:400px;perspective:1400px}
+.dcard{position:absolute;left:0;right:0;top:0;height:340px;border-radius:30px;padding:40px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(145deg,#1b1d22,#0c0d10);box-shadow:0 40px 80px -30px #000;will-change:transform,opacity;transform-origin:50% 100%}
+.dcard::before{content:"";position:absolute;inset:0;border-radius:30px;background:linear-gradient(135deg,rgba(242,183,5,.14),transparent 45%);pointer-events:none}
+.dcard .no{font-family:var(--display);font-weight:800;font-size:7rem;line-height:.8;color:transparent;-webkit-text-stroke:2px var(--gold);position:absolute;right:30px;top:26px;opacity:.9}
+.dcard .ic{width:62px;height:62px;border-radius:18px;background:linear-gradient(135deg,var(--gold2),var(--gold));display:grid;place-items:center;font-size:1.8rem;margin-bottom:60px}
+.dcard h3{font-size:2.1rem;margin-bottom:.8rem}
+.dcard p{color:#b4b8bf;max-width:36ch;font-size:1.05rem}
+
+/* WHY */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.why div{padding:34px;border-radius:26px;background:var(--panel);border:1px solid var(--line)}
+.why div:nth-child(2){background:linear-gradient(160deg,#1d1808,#111317)}
+.why span{font-size:2rem}
+.why h3{font-size:1.5rem;margin:1rem 0 .5rem}
+.why p{color:#a9adb5}
+.flagbar{height:6px;border-radius:3px;margin-top:3rem;background:linear-gradient(90deg,#000 0 16%,#fff 16% 17%,var(--red) 17% 33%,#fff 33% 34%,var(--grn) 34% 50%,var(--gold) 50% 66%,var(--blu) 66% 100%)}
+
+/* CONTACT */
+.contact{background:linear-gradient(170deg,#13100a,var(--bg) 60%)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+.contact h2{font-size:clamp(2.5rem,5.2vw,4.6rem);margin:1.2rem 0}
+.contact p.lead{color:#a9adb5;max-width:40ch;margin-bottom:2rem}
+.info{display:grid;gap:14px}
+.info a,.info div.r{display:flex;gap:14px;align-items:center;padding:16px 18px;border-radius:18px;background:var(--panel);border:1px solid var(--line);transition:transform .25s,border-color .25s;word-break:break-word}
+.info a:hover{transform:translateX(8px);border-color:var(--gold)}
+.info .i{font-size:1.4rem;width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#141000;display:grid;place-items:center;flex:none}
+.info small{display:block;color:#8a8f98;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+form{padding:34px;border-radius:30px;background:linear-gradient(160deg,#181a1f,#0d0e11);border:1px solid var(--line);display:grid;gap:16px;transform:perspective(1200px) rotateY(-4deg);transition:transform .4s}
+form:hover,form:focus-within{transform:perspective(1200px) rotateY(0)}
+form h3{font-size:1.9rem}
+label{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:#9a9ea7;display:grid;gap:6px;font-weight:700}
+input,select,textarea{font:inherit;color:#fff;background:#07080a;border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;outline:none;text-transform:none;letter-spacing:0}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(242,183,5,.22)}
+select option{color:#000}
+textarea{min-height:90px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+footer{padding:46px 0;border-top:1px solid var(--line);font-size:.9rem;color:#9a9ea7}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center}
+footer b{color:var(--gold);font-family:var(--display)}
+
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:980px){
+  .hero .wrap,.deck-sec .wrap,.contact .wrap{grid-template-columns:1fr}
+  .stage{height:380px}.car3d{scale:.62}
+  .hero .bigtext{font-size:30vw}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .why{grid-template-columns:1fr}
+  .links a{display:none}.burger{display:block}
+  .links.open{position:absolute;top:76px;left:0;right:0;background:rgba(7,8,10,.97);flex-direction:column;padding:24px;gap:1.2rem}
+  .links.open a{display:block}.links.open .btn{display:inline-flex;justify-content:center}
+  .deck{height:360px}.dcard{height:300px;padding:28px}.dcard .no{font-size:5rem}.dcard .ic{margin-bottom:34px}
+  .deck-sec .sticky{padding-top:50px}.deck-sec .wrap{gap:1.5rem}
+}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.row2{grid-template-columns:1fr}.car3d{scale:.52}.stage{height:330px}.swatches{bottom:-2%}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="Nyandeng Motors home">
+      <span class="badge"><svg viewBox="0 0 60 30"><path d="M4 21 L8 14 Q10 9 15 8 L38 8 Q44 9 48 14 L54 16 Q57 18 57 21 L57 24 H4Z" fill="#f2b705"/><circle cx="16" cy="24" r="4.5" fill="#000" stroke="#f2b705" stroke-width="2"/><circle cx="45" cy="24" r="4.5" fill="#000" stroke="#f2b705" stroke-width="2"/></svg></span>
+      <span><b>NYANDENG</b><small>Motors SSD</small></span>
+    </a>
+    <div class="links" id="links">
+      <a href="#cars">Cars</a>
+      <a href="#how">How it works</a>
+      <a href="#why">Why us</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/254182895922" target="_blank" rel="noopener" class="btn primary">WhatsApp us</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="bigtext" id="bigtext" aria-hidden="true">NYANDENG</div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">🇰🇪 Kenya &nbsp;|&nbsp; South Sudan 🇸🇸</span>
+      <h1>Quality cars.<br><em>Trusted deals.</em></h1>
+      <p class="lead">Quality imported cars from Japan for buyers in Kenya and South Sudan. Pick your car, pick your color and message us on WhatsApp.</p>
+      <div class="cta">
+        <a href="#cars" class="btn primary">Browse cars →</a>
+        <a href="https://wa.me/254182895922" target="_blank" rel="noopener" class="btn ghost">💬 +254 182 895 922</a>
+      </div>
+      <div class="flags"><span>🇯🇵 Imported from Japan</span><span>🇰🇪 Kenya</span><span>🇸🇸 South Sudan</span></div>
+    </div>
+    <div class="stage" id="stage">
+      <div class="car3d" id="car3d"><div class="disc"></div></div>
+      <div class="swatches" id="swatches" aria-label="Car color"></div>
+      <div class="hint">Drag to rotate</div>
+    </div>
+  </div>
+</header>
+
+<div class="tape" aria-hidden="true"><div>
+  <span>Mercedes-Benz</span><span>Range Rover</span><span>Volkswagen</span><span>Mazda</span><span>Imported from Japan</span><span>Kenya</span><span>South Sudan</span>
+  <span>Mercedes-Benz</span><span>Range Rover</span><span>Volkswagen</span><span>Mazda</span><span>Imported from Japan</span><span>Kenya</span><span>South Sudan</span>
+</div></div>
+
+<section class="pad" id="cars">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="eyebrow">Showroom</span><h2>Recent arrivals.</h2></div>
+      <p>A look at the kind of cars we bring in. Stock changes fast, so message us for what's available and the current price.</p>
+    </div>
+    <div class="chips reveal" id="chips">
+      <button class="chip on" data-f="all">All</button><button class="chip" data-f="SUV">SUVs</button><button class="chip" data-f="Sedan">Sedans &amp; hatchbacks</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="note">Illustrations only. Colors and models shown reflect recent cars we've had; ask on WhatsApp for photos and today's stock.</p>
+  </div>
+</section>
+
+<section class="deck-sec" id="how">
+  <div class="sticky">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">How it works</span>
+        <h2>From first message to the keys.</h2>
+        <p class="lead">Four simple steps. Keep scrolling and watch the deck.</p>
+        <div class="prog"><i id="prog"></i></div>
+      </div>
+      <div class="deck" id="deck">
+        <div class="dcard"><span class="no">01</span><div class="ic">🔎</div><h3>Choose your car</h3><p>Tell us the make, model, color and budget, or browse our recent arrivals and ask about any car you like.</p></div>
+        <div class="dcard"><span class="no">02</span><div class="ic">💬</div><h3>Confirm the details</h3><p>We send photos and details on WhatsApp, and you confirm the price and specification before anything moves forward.</p></div>
+        <div class="dcard"><span class="no">03</span><div class="ic">🤝</div><h3>Secure the deal</h3><p>Trusted deals mean clear terms and clear communication, so you know exactly what you're buying.</p></div>
+        <div class="dcard"><span class="no">04</span><div class="ic">🔑</div><h3>Take delivery</h3><p>Collect in Kenya or arrange to have your car brought to South Sudan, then drive away in your new car.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="why">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><span class="eyebrow">Why Nyandeng</span><h2>Built on trust.</h2></div><p>Buying a car is a big decision. We keep it simple, honest and easy to follow.</p></div>
+    <div class="why">
+      <div class="reveal"><span>🏆</span><h3>Quality cars</h3><p>Imported vehicles selected for condition and value, from everyday hatchbacks to luxury SUVs.</p></div>
+      <div class="reveal"><span>🤝</span><h3>Trusted deals</h3><p>Straight answers, clear pricing and direct contact with the people selling you the car.</p></div>
+      <div class="reveal"><span>🌍</span><h3>Two countries, one team</h3><p>Working across Kenya and South Sudan, so buyers on both sides are covered.</p></div>
+    </div>
+    <div class="flagbar"></div>
+  </div>
+</section>
+
+<section class="pad contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Find your next car.</h2>
+      <p class="lead">Tell us what you're looking for and we'll reply on WhatsApp with options.</p>
+      <div class="info">
+        <a href="https://wa.me/254182895922" target="_blank" rel="noopener"><span class="i">💬</span><div><small>WhatsApp / Call</small>+254 182 895 922</div></a>
+        <a href="https://www.tiktok.com/@nyandeng.motors.ss" target="_blank" rel="noopener"><span class="i">🎬</span><div><small>TikTok</small>@nyandeng.motors.ss</div></a>
+        <div class="r"><span class="i">📍</span><div><small>Where</small>Kenya 🇰🇪 | South Sudan 🇸🇸</div></div>
+      </div>
+    </div>
+    <form id="quote" class="reveal">
+      <h3>Tell us what you want</h3>
+      <div class="row2">
+        <label>Your name<input name="name" required placeholder="Your name"></label>
+        <label>Budget (USD)<input name="budget" placeholder="e.g. 15,000"></label>
+      </div>
+      <div class="row2">
+        <label>Car type
+          <select name="car" id="carSel"><option>Mercedes-Benz</option><option>Range Rover</option><option>Volkswagen</option><option>Mazda</option><option>Other make</option></select>
+        </label>
+        <label>Deliver to
+          <select name="dest"><option>South Sudan</option><option>Kenya</option></select>
+        </label>
+      </div>
+      <label>Details<textarea name="msg" id="msg" placeholder="Model, year, color, anything else…"></textarea></label>
+      <button class="btn wa" type="submit">Send on WhatsApp →</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>Nyandeng Motors SSD</b> · Quality cars. Trusted deals.</div>
+    <div>Kenya 🇰🇪 | South Sudan 🇸🇸 · © <span id="yr"></span></div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+const $=(s,p=document)=>p.querySelector(s), $$=(s,p=document)=>[...p.querySelectorAll(s)];
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+$('#yr').textContent=new Date().getFullYear();
+
+/* nav / reveal */
+const nav=$('#nav');
+addEventListener('scroll',()=>nav.classList.toggle('stuck',scrollY>30),{passive:true});
+$('#burger').onclick=()=>$('#links').classList.toggle('open');
+$$('#links a').forEach(a=>a.onclick=()=>$('#links').classList.remove('open'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
+
+/* ---------- car shapes (side profile, viewBox 400x160) ---------- */
+const SHAPES={
+ SUV:{
+  body:'M28 108 L24 86 Q24 70 36 62 L68 36 Q80 26 100 24 L238 24 Q256 26 268 42 L300 66 Q362 72 380 88 Q388 108 376 112 L350 113 A32 32 0 0 0 286 113 L130 113 A32 32 0 0 0 66 113 L36 113 Q28 113 28 108Z',
+  glass:'M82 40 Q90 32 106 31 L148 31 L148 66 L74 66Z M156 31 L236 31 Q250 33 258 44 L278 66 L156 66Z',
+  doors:'M152 33 V108 M236 33 V108'},
+ Sedan:{
+  body:'M24 108 L20 94 Q22 80 40 78 L82 76 Q108 44 150 40 L226 40 Q262 42 286 64 L330 72 Q376 78 386 94 Q390 108 378 112 L350 113 A32 32 0 0 0 286 113 L130 113 A32 32 0 0 0 66 113 L34 113 Q24 113 24 108Z',
+  glass:'M104 66 Q118 48 148 46 L184 46 L184 66Z M192 46 L226 46 Q250 48 266 66 L192 66Z',
+  doors:'M188 48 V108 M262 68 V108'}
+};
+const W1=98,W2=318,WY=113;
+function carSVG(shape,color,mode){ // mode: 'full' (all details), 'body', 'tire'
+  const S=SHAPES[shape];let g='';
+  if(mode==='tire'||mode==='full'){g+=`<circle cx="${W1}" cy="${WY}" r="27" fill="#0b0b0c"/><circle cx="${W2}" cy="${WY}" r="27" fill="#0b0b0c"/>`}
+  const body=`<path d="${S.body}" fill="${color}"/>`;
+  let d='';
+  if(mode==='full'){
+    d=`<path d="${S.glass}" fill="#0a1017" opacity=".92"/><path d="${S.glass}" fill="url(#gl)" opacity=".35"/>
+    <path d="${S.doors}" stroke="rgba(0,0,0,.45)" stroke-width="1.6" fill="none"/>
+    <path d="M30 84 H382" stroke="rgba(255,255,255,.28)" stroke-width="1.4" fill="none"/>
+    <path d="M372 86 l11 2 l1 6 l-14 -1z" fill="#fff6c8"/><path d="M22 84 h9 v11 h-10z" fill="#e0242b"/>
+    ${[W1,W2].map(x=>`<circle cx="${x}" cy="${WY}" r="15" fill="#c9cdd3"/><circle cx="${x}" cy="${WY}" r="5" fill="#6b6f77"/><g stroke="#80848c" stroke-width="2.4">${[0,60,120].map(a=>`<line x1="${x-14*Math.cos(a*Math.PI/180)}" y1="${WY-14*Math.sin(a*Math.PI/180)}" x2="${x+14*Math.cos(a*Math.PI/180)}" y2="${WY+14*Math.sin(a*Math.PI/180)}"/>`).join('')}</g>`).join('')}`;
+  }
+  const defs=mode==='full'?`<defs><linearGradient id="gl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>`:'';
+  return `<svg viewBox="0 0 400 160" xmlns="http://www.w3.org/2000/svg">${defs}${body}${mode!=='body'?g:''}${d}</svg>`;
+}
+const shade=(hex,f)=>{const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;const c=v=>clamp(Math.round(v*f),0,255);return `rgb(${c(r)},${c(g)},${c(b)})`};
+
+/* ---------- 3D extruded hero car ---------- */
+const COLORS={'Pearl White':'#e9ebee','Obsidian':'#25272c','Racing Blue':'#1d4fd0','Ruby Red':'#c2161e','Graphite':'#7b7f87','Gold':'#d9a406'};
+const N=34,GAP=3.6;
+const car3d=$('#car3d');
+const layers=[];
+for(let i=0;i<N;i++){
+  const L=document.createElement('div');L.className='layer';
+  const edge=(i===0||i===N-1), nearTire=(i<7||i>N-8);
+  L.dataset.t=Math.abs(i-(N-1)/2)/((N-1)/2);
+  L.style.transform=`translateZ(${((i-(N-1)/2)*GAP).toFixed(1)}px)`;
+  L._mode=edge?'full':(nearTire?'tire':'body');
+  car3d.appendChild(L);layers.push(L);
+}
+let curColor=COLORS['Pearl White'];
+function paintCar(hex){
+  curColor=hex;
+  layers.forEach(L=>{
+    const t=+L.dataset.t; // 0 center .. 1 outside
+    const f=.62+.38*Math.pow(t,1.6);
+    L.innerHTML=carSVG('SUV',shade(hex,f),L._mode);
+  });
+}
+paintCar(curColor);
+const sw=$('#swatches');
+Object.entries(COLORS).forEach(([n,h],i)=>{
+  const b=document.createElement('button');b.title=n;b.setAttribute('aria-label',n);b.style.background=h;if(!i)b.className='on';
+  b.onclick=()=>{$$('button',sw).forEach(x=>x.classList.toggle('on',x===b));paintCar(h)};sw.appendChild(b);
+});
+
+/* rotation: idle sway + drag */
+const stage=$('#stage');let ry=-30,vel=0,drag=false,lx=0,idle=0,base=0;
+stage.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX;stage.setPointerCapture(e.pointerId)});
+stage.addEventListener('pointermove',e=>{if(!drag)return;ry=clamp(ry+(e.clientX-lx)*.35,-62,62);lx=e.clientX;idle=performance.now()+2500});
+['pointerup','pointercancel'].forEach(ev=>stage.addEventListener(ev,()=>drag=false));
+const heroEl=$('.hero');
+heroEl.addEventListener('pointermove',e=>{const r=heroEl.getBoundingClientRect();$('#bigtext').style.setProperty('--bx',((e.clientX-r.left)/r.width-.5)*-60+'px')});
+(function loop(t){
+  if(!drag&&t>idle){ry+=(Math.sin(t/2600)*48-ry)*.03}
+  car3d.style.setProperty('--ry',ry.toFixed(2)+'deg');
+  requestAnimationFrame(loop);
+})(0);
+
+/* ---------- inventory ---------- */
+/* Edit this list to match real stock. price: '' shows "Ask for price". */
+const CARS=[
+ {name:'Mercedes-Benz GLS',type:'SUV',shape:'SUV',color:'#e9ebee',note:'Full-size luxury SUV. Seats up to seven.',price:''},
+ {name:'Mercedes-Benz G-Class',type:'SUV',shape:'SUV',color:'#1d4fd0',note:'The icon. Rugged, boxy and unmistakable.',price:''},
+ {name:'Range Rover',type:'SUV',shape:'SUV',color:'#25272c',note:'Black on black luxury with real presence.',price:''},
+ {name:'Volkswagen Arteon',type:'Sedan',shape:'Sedan',color:'#e9ebee',note:'Sleek fastback coupe-style sedan.',price:''},
+ {name:'Mazda 3',type:'Sedan',shape:'Sedan',color:'#7b7f87',note:'Efficient, stylish everyday car.',price:''},
+ {name:'Mazda',type:'Sedan',shape:'Sedan',color:'#c2161e',note:'Soul Red style, sporty and sharp.',price:''}
+];
+const grid=$('#grid');
+CARS.forEach(c=>{
+  const el=document.createElement('article');el.className='car tilt reveal';el.dataset.type=c.type;
+  el.innerHTML=`<div class="glare"></div><div class="pic">${carSVG(c.shape,c.color,'full').replace('id="gl"','id="gl'+Math.random().toString(36).slice(2,6)+'"')}</div>
+  <div class="tag">${c.type==='SUV'?'SUV':'Sedan / Hatch'}</div><h3>${c.name}</h3><p>${c.note}</p>
+  <div class="row"><div class="price">${c.price||'Ask for price'}<small>Imported from Japan</small></div><a class="btn primary ask" href="#contact" data-car="${c.name}">Enquire</a></div>`;
+  grid.appendChild(el);io.observe(el);
+});
+/* make gradient ids unique per card */
+$$('.car svg').forEach((s,i)=>{const id='g'+i;s.innerHTML=s.innerHTML.replace(/id="gl[^"]*"/,`id="${id}"`).replace(/url\(#gl[^)]*\)/,`url(#${id})`)});
+$$('.ask').forEach(a=>a.addEventListener('click',()=>{
+  const n=a.dataset.car;const sel=$('#carSel');
+  sel.value=/Range/.test(n)?'Range Rover':/Volks/.test(n)?'Volkswagen':/Mazda/.test(n)?'Mazda':/Mercedes/.test(n)?'Mercedes-Benz':'Other make';
+  $('#msg').value=`I'm interested in the ${n}. Please send photos and the price.`;
+}));
+$$('.chip').forEach(c=>c.onclick=()=>{
+  $$('.chip').forEach(x=>x.classList.toggle('on',x===c));
+  $$('.car').forEach(el=>el.classList.toggle('hide',c.dataset.f!=='all'&&el.dataset.type!==c.dataset.f));
+});
+$$('.tilt').forEach(c=>{
+  c.addEventListener('pointermove',e=>{
+    const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    c.style.transform=`rotateY(${(x-.5)*16}deg) rotateX(${(.5-y)*16}deg) translateZ(8px)`;
+    c.style.setProperty('--gx',x*100+'%');c.style.setProperty('--gy',y*100+'%');
+  });
+  c.addEventListener('pointerleave',()=>c.style.transform='');
+});
+
+/* ---------- scroll deck ---------- */
+const deckSec=$('#how'),cards=$$('.dcard'),prog=$('#prog');
+let pos=0,tgt=0;
+function dscroll(){const r=deckSec.getBoundingClientRect();tgt=clamp(-r.top/(r.height-innerHeight),0,1)*(cards.length-1)}
+addEventListener('scroll',dscroll,{passive:true});dscroll();
+(function dl(){
+  pos+=(tgt-pos)*.1;
+  cards.forEach((c,i)=>{
+    const d=i-pos;
+    if(d<=0){
+      const k=clamp(-d,0,1.4);
+      c.style.transform=`translate3d(0,${-k*70}%,${k*60}px) rotateX(${k*22}deg)`;
+      c.style.opacity=clamp(1-k*1.15,0,1);
+    }else{
+      c.style.transform=`translate3d(0,${d*34}px,${-d*150}px) scale(${1-d*.05})`;
+      c.style.opacity=clamp(1-d*.28,0,1);
+    }
+    c.style.zIndex=100-Math.round(Math.abs(d)*10)-(d>0?0:20);
+  });
+  prog.style.width=(pos/(cards.length-1)*100)+'%';
+  requestAnimationFrame(dl);
+})();
+
+/* ---------- form → WhatsApp ---------- */
+$('#quote').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=new FormData(e.target);
+  const t=`Hello Nyandeng Motors! I'm ${f.get('name')}.\nLooking for: ${f.get('car')}\nBudget: ${f.get('budget')||'to discuss'}\nDeliver to: ${f.get('dest')}\n${f.get('msg')||''}`;
+  open('https://wa.me/254182895922?text='+encodeURIComponent(t),'_blank');
+});
+})();
+</script>
+</body>
+</html>
